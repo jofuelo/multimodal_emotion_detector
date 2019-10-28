@@ -1,0 +1,8 @@
+django-heroku
+gunicorn
+pydub
+SpeechRecognition
+keras
+tensorflow
+pickle
+unidecode

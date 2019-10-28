@@ -1,0 +1,124 @@
+{% load static %}
+<link rel='shortcut icon' type='image/x-icon' href="{% static 'imgs/fav.png' %}" />
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.15.3/dist/tf.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="{% static 'js/clmtrackr.js' %}"></script>
+
+<script src="{% static 'js/spatialdropout2d.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script type="module">
+	if (hasGetUserMedia()) {
+		tf.loadModel("{% static 'keras/model.json' %}").then(startVideo);
+	} else {
+		alert('getUserMedia() is not supported by your browser');
+	}
+</script>
+
+<section id="optionsSection">
+	<div class="form-horizontal iniContainer">
+		<div class="form-group">
+			<label for="audioSource"  class="iniLabels control-label">Audio:</label>
+			<div class="col-sm-10">
+				<select name="audioSource" id="audioSource" class="form-control iniSelector"></select>
+			</div>
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="videoSource"  class="iniLabels control-label">Video:</label>
+			<div class="col-sm-10">
+				<select name="videoSource" id="videoSource" class="form-control iniSelector"></select>
+			</div>
+		</div>
+		<br>
+		<div class="form-group"> 
+			<div class="checkbox">
+				<label><input type="checkbox" id="facialCheck"> Show facial tracking</label>
+			</div>
+		</div>
+		<hr>
+		<label for="pesoRange"  class="iniLabels control-label">Facial model weight:</label>
+		<div class="slidecontainer">
+			<input type="range" min="0.0" max="1.0" value="0.6" step=0.01 class="slider" id="rangePeso" oninput="showVal(this)">
+			<span class="sliderInd" id="indPeso">0.6</span>
+		</div>
+		<br>
+		<label for="pesoRange"  class="iniLabels control-label">Security margin for textual model:</label>
+		<div class="slidecontainer">
+			<input type="range" min="0.0" max="1.0" value="0.2" step=0.01 class="slider" id="rangeMargen" oninput="showVal(this)">
+			<span class="sliderInd" id="indMargen">0.2</span>
+		</div>
+	</div>
+	
+	<p id="author">Author: José Manuel Fuentes López<br><a href="https://github.com/jofuelo">GitHub</a> | <a href="www.linkedin.com/in/jofuelo">LinkedIn</a></p>
+</section>
+<div id="contractor">◀</div>
+<section id="contentSection">
+	<table id="mainTable">
+		<tbody>
+			<tr>
+				<td rowspan="2">
+					<div id="videoContainer">
+						<video id="inputVideo" width="600" height="450" autoplay muted></video>
+						<canvas id="outputCanvas" width="600" height="450"></canvas>
+						<div id="recText" class="hidden">
+							<span class="dot"></span>
+							<span id="textSegs"></span>
+						</div>
+						<div class="lds-dual-ring"></div>
+						<div class="hidden" id="noCara">
+							<label>No face detected</label>
+						</div>
+						<img id="fullscreen" class="screen" src="{% static 'imgs/fullscreen.png' %}"></img>
+						<img id="normalscreen" class="screen hidden" src="{% static 'imgs/normalScreen.png' %}"></img>
+					</div>
+				</td>
+				<td class="rightTd alignTop">
+					<div class="inputContainer">
+						<label>CNN Input</label>
+						<br>
+						<canvas id="CNNCanvas" width="48" height="48"></canvas>
+					</div>
+					<div class="inputContainer">
+						<label>Audio waveform</label>
+						<br>
+						<canvas width="192" height="48" id="audioCanvas"></canvas>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="rightTd alignBottom">
+					<table id="resultsContainer">
+						<tbody>
+							<tr id="barChart">
+								<td><div id="angerBar"></div></td>
+								<td><div id="disgustBar"></div></td>
+								<td><div id="fearBar"></div></td>
+								<td><div id="happinessBar"></div></td>
+								<td><div id="sadnessBar"></div></td>
+								<td><div id="surpriseBar"></div></td>
+								<td><div id="neutralBar"></div></td>
+							</tr>
+							<tr id="emojis">
+								<td><img id="angerEmoji" src="{% static 'imgs/enfadado.png' %}"></td>
+								<td><img id="disgustEmoji" src="{% static 'imgs/asco.png' %}"></td>
+								<td><img id="fearEmoji" src="{% static 'imgs/miedo.png' %}"></td>
+								<td><img id="happinessEmoji" src="{% static 'imgs/alegre.png' %}"></td>
+								<td><img id="sadnessEmoji" src="{% static 'imgs/triste.png' %}"></td>
+								<td><img id="surpriseEmoji" src="{% static 'imgs/sorpresa.png' %}"></td>
+								<td><img id="neutralEmoji" src="{% static 'imgs/neutro.png' %}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="waveform"></div>
+	<div id="controls">
+        <button id="record" class="deshabilitado" disabled>Record</button>
+        <button id="download" class="deshabilitado" disabled>Download</button>
+	</div>
+</section>
