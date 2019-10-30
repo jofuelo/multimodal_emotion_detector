@@ -262,7 +262,7 @@ function gotStream(stream) {
 		if(primera){
 			ctx = canvas.getContext('2d');
 			CNNctx = CNNcanvas.getContext('2d');
-			$(".lds-dual-ring").remove();
+			$(".lds-jfl-alm-jfo-dual-ring").remove();
 			singleInterval = setInterval(positionLoop, 500);
 			requestAnimationFrame(paintCanvas);
 			primera = false;

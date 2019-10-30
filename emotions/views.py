@@ -62,9 +62,9 @@ def analyze_audio(request):
         channels=1
     )                            
     i = 0
-    while os.path.isfile("output" + str(i) + ".wav"):
+    while os.path.isfile("lea" + str(i) + ".wav"):
         i += 1                 
-    AUDIO_FILE = "output" + str(i) + ".wav"
+    AUDIO_FILE = "lea" + str(i) + ".wav"
     sound.export(AUDIO_FILE, format="wav")                                 
     r = sr.Recognizer()
     with sr.AudioFile(AUDIO_FILE) as source:
