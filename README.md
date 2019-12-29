@@ -29,6 +29,7 @@ The neural networks corresponding to the three used modalities are private. The 
 <h3>Additional functionalities</h3>
 The app also allows to record live sessions of emotion detection and download the video afterwards.
 
+
 In order to make it more visual and identify the emotions easily, each emotion is related in the app with one color and one emoji:
  - Anger -> Red
  - Disgust -> Green
@@ -51,5 +52,7 @@ The screenshots show the texts of the app in Spanish as the app was initially fu
 
 <h2>Credits</h2>
 Some external tools were used to develop this recognizer.
+
 The face detector that it is used to locate and crop the face in the image is the one available at https://github.com/auduno/clmtrackr
+
 The voice transcriptor used to get the spoken message from the voice is the one available at https://github.com/Uberi/speech_recognition
