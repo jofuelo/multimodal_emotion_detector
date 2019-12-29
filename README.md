@@ -28,6 +28,15 @@ The emotional model used for this classifier is the classic discrete Paul Ekman'
 The neural networks corresponding to the three used modalities are private. The ones available publicly in this repository are deteriorated versions of the original ones.
 <h3>Additional functionalities</h3>
 The app also allows to record live sessions of emotion detection and download the video afterwards.
+
+In order to make it more visual and identify the emotions easily, each emotion is related in the app with one color and one emoji:
+ - Anger -> Red
+ - Disgust -> Green
+ - Fear -> Purple
+ - Happiness -> Yellow
+ - Sadness -> Blue
+ - Surprise -> Orange
+ - Neutral -> White
 <h3>Available app</h3>
 A lite version of this app is available at: https://tfm-emotions.herokuapp.com/emotions/
 As heroku free plan limits the memory available, this public version only includes the facial emotion, which is in fact the most representative one.
