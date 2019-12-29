@@ -32,11 +32,14 @@ The app also allows to record live sessions of emotion detection and download th
 A lite version of this app is available at: https://tfm-emotions.herokuapp.com/emotions/
 As heroku free plan limits the memory available, this public version only includes the facial emotion, which is in fact the most representative one.
 <h3>Screenshots</h3>
-![Emotion detection example](screenshots/Imagen1.gif)
+The screenshots show the texts of the app in Spanish as the app was initially fully designed in Spanish. Right now these texts are transcribed and the texts of the available app and the code in this github are fully in English.
 
-![Emotion detection example](screenshots/Imagen2.gif)
+![Emotion detection example](screenshots/imag1.gif)
+
+![Emotion detection example](screenshots/image2.gif)
 
 ![Full screenshot of the app](screenshots/Imagen3.png)
+
 <h2>Credits</h2>
 Some external tools were used to develop this recognizer.
 The face detector that it is used to locate and crop the face in the image is the one available at https://github.com/auduno/clmtrackr
