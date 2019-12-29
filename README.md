@@ -49,7 +49,7 @@ As heroku free plan limits the memory available, this public version only includ
 <h3>Screenshots</h3>
 The screenshots show the texts of the app in Spanish as the app was initially fully designed in Spanish. Right now these texts are transcribed and the texts of the available app and the code in this github are fully in English.
 
-Here is a screenshot of the full app which code is available in this github.
+Here is a screenshot of the full app.
 
 ![Full screenshot of the app](screenshots/Imagen3.png)
 
