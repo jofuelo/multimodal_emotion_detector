@@ -41,12 +41,15 @@ In order to make it more visual and identify the emotions easily, each emotion i
 <h3>Available app</h3>
 A lite version of this app is available at: https://tfm-emotions.herokuapp.com/emotions/
 As heroku free plan limits the memory available, this public version only includes the facial emotion, which is in fact the most representative one.
-<h3>Screenshots</h3>
-The screenshots show the texts of the app in Spanish as the app was initially fully designed in Spanish. Right now these texts are transcribed and the texts of the available app and the code in this github are fully in English.
 
 ![Emotion detection example](screenshots/image1.gif)
 
 ![Emotion detection example](screenshots/image2.gif)
+
+<h3>Screenshots</h3>
+The screenshots show the texts of the app in Spanish as the app was initially fully designed in Spanish. Right now these texts are transcribed and the texts of the available app and the code in this github are fully in English.
+
+Here is a screenshot of the full app which code is available in this github.
 
 ![Full screenshot of the app](screenshots/Imagen3.png)
 
