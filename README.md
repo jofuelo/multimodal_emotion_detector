@@ -7,7 +7,7 @@ This web is an online live emotion detector in Spanish language. It uses and com
 The modalities used are: 
 
  - Facial expressions.
- - Prosodic characteristics of the voice (how are you speaking)
+ - Prosodic characteristics of the voice (how are you speaking).
  - The spoken message (what are you saying).
 
 <h3>Combination</h3>
